@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package vehicle_data;
+
+service ServiceTransport {
+    rpc GetTransportData(TimeRange) returns (TransportData);
+}
+
+service ServicePlates {
+    rpc GetPlatesData(TimeRange) returns (PlatesData);
+}
+
+message TimeRange {
+    string start_time = 1;
+    string end_time = 2;
+}
+
+message Plate {
+    string number = 1;
+    string time = 2;
+}
+
+
+message TransportData {
+    int32 total_count_cars = 1;
+    int32 total_count_buses = 2;
+    int32 total_count_trucks = 3;
+    int32 total_count_motorcycles = 4;
+    int32 total_count_bicycles = 5;
+}
+
+message PlatesData {
+    repeated Plate plates = 1;
+}
+
+
