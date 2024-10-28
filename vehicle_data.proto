@@ -11,13 +11,13 @@ service ServicePlates {
 }
 
 message TimeRange {
-    string start_time = 1;
-    string end_time = 2;
+    int64 start_time = 1;
+    int64 end_time = 2;
 }
 
 message Plate {
     string number = 1;
-    string time = 2;
+    int64 time = 2;
 }
 
 
